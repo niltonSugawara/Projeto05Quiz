@@ -13,7 +13,7 @@
         </ul>
         
         <%String name="";
-        if (request.getParameter("user") == "deslogado"){%><script>alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
+        if (request.getParameter("user") == "deslogado"){%><script language="JavaScript">alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
         <!--tela de login--> 
        
        <%try {
@@ -28,7 +28,7 @@
            {             
            }
        } catch(Exception ex) {
-           %><script>alert("Digite um valor válido!");</script><%
+           %><script language="JavaScript">alert("Digite um valor válido!");</script><%
        }      
        %>
        
@@ -40,14 +40,14 @@
             </form>
         <%} else {
         name=(String)session.getAttribute("nomeSessao"); %>
-           <div class = "container">      
+               
            <p>Olá, <%=name%></p>
         <br>
-        <FORM NAME="form1" METHOD="POST">
-        <INPUT TYPE="HIDDEN" NAME="buttonName">
-        <INPUT TYPE="BUTTON" VALUE="Deslogar" ONCLICK="button1()" class="btn">
-    </FORM>
-        </div>
+        <form name="form1" method="post">
+        <input type="hidden" name="buttonName">
+        <input type="button" value="Deslogar" onclick="button1()" class="btn">
+        </form>
+        
         <%}%>
             
             <% 
@@ -59,7 +59,7 @@
 
     
 
-    <SCRIPT LANGUAGE="JavaScript">
+    <script language="JavaScript">
         
         function button1()
         {
@@ -67,6 +67,6 @@
             form1.submit();
         } 
         
-    </SCRIPT>
+    </script>
      </body>
 </html>
