@@ -27,6 +27,7 @@
         <title>Quiz de Conhecimentos Gerais</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/navbar.jspf" %>
         <h1>Quiz de Conhecimentos Gerais</h1>
         <h2>Teste seus conhecimentos e cultura</h2>
         
