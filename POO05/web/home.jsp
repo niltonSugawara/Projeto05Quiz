@@ -12,9 +12,9 @@
         for (int i = 0; i <Quiz.getTest().size(); i++) {
             Question q = Quiz.getTest().get(i);
             String p = request.getParameter(q.getQuestion());
-            if(q.getAnswer().equals(p)){
+            if(q.getAnswer().equals(p))
                 count++;
-            }
+            
             }
         media = 100.0 * ((double) (count)/Quiz.getTest().size());
     }
