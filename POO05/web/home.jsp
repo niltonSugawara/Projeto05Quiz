@@ -43,9 +43,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz de Conhecimentos Gerais</title>
+        <style>
+            main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;}
+        </style>
     </head>
     <body>
+        <main>
+       
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
+        
         <h1>Quiz de Conhecimentos Gerais</h1>
         <h2>Teste seus conhecimentos e cultura</h2>
         
@@ -81,7 +87,8 @@
         <input type="hidden" name="buttonName">
         <input type="button" value="Deslogar" onclick="button1()" class="btn">
         </form>
-        
+         <% try {
+            if(BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() != null) { %>          
          <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() && BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 80 ){%>
          <hr>
          <h2>Parabéns <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,ótimo resultado,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
@@ -103,7 +110,11 @@
          <h2>Tente novamente para obter um resultado melhor</h2>
          <hr>
          <%}%>  
-        
+        <%
+          }
+       } catch(Exception ex) {
+         %><%
+       }    %>
        <h3><a href="quiz.jsp">Realizar QUIZ</a></h3>
            
        <h1>Seus 10 Ultimos Testes</h1>
@@ -190,4 +201,5 @@
         <%}%>
     </table>
     </body>
+      <%@include file="WEB-INF/jspf/rodapé.jspf" %>
 </html>
