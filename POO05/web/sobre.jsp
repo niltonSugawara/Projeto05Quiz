@@ -12,6 +12,7 @@
         <title>Quiz do Grupo 01</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/navbar.jspf" %>
         <h1>Desenvolvedores do Quiz</h1>
         
     </body>
