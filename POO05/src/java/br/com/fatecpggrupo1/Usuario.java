@@ -11,9 +11,22 @@ import java.time.LocalDateTime;
  *
  * @author Tiago
  */
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
+    
     private String nome;
     private LocalDateTime dataTeste;
+    
+    @Override
+     public int compareTo(Usuario outroUsuario) {
+     if (this.resultadoTeste > outroUsuario.resultadoTeste) {
+          return -1;
+     }
+     if (this.resultadoTeste < outroUsuario.resultadoTeste) {
+          return 1;
+     }
+     return 0;
+     }
+
 
     public LocalDateTime getDataTeste() {
         return dataTeste;

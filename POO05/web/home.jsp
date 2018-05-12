@@ -1,3 +1,4 @@
+<%@page import="java.util.Collections"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.util.Calendar"%>
@@ -31,6 +32,8 @@
         u.setResultadoTeste(media);
         
         BD.getUsuarios().add(u);
+        response.sendRedirect(request.getRequestURI());
+        }
     }
     %>
     
@@ -94,7 +97,27 @@
         </form>
         
        <h3><a href="quiz.jsp">Realizar QUIZ</a></h3>
-        
+           
+       <h1>Seus 10 Ultimos Testes</h1>
+           <table name="10log">
+        <tr>
+            <th>Nome</th>
+            <th>Resultado</th>
+            <th>Data</th>
+        </tr>
+        <% for(int i = 0; i < BD.getUsuarios().size(); i++){
+        if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(i).getNome()){%>
+        <tr>
+        <td><%=BD.getUsuarios().get(i).getNome() %></td>
+        <td><%= BD.getUsuarios().get(i).getResultadoTeste() %></td>
+        <td><%=BD.getUsuarios().get(i).getDataTeste().getDayOfMonth() + "/" +
+                BD.getUsuarios().get(i).getDataTeste().getMonth()+ "/" +
+                BD.getUsuarios().get(i).getDataTeste().getYear() + " " +
+                BD.getUsuarios().get(i).getDataTeste().getHour() + ":" +
+                BD.getUsuarios().get(i).getDataTeste().getMinute() %>  </td>
+        </tr>
+        <%}}%>
+           </table>
         <%}%>
             
             <% 
@@ -115,6 +138,7 @@
         
     </script>
     <h1>TOP 10</h1>
+
     <table name="top10">
         <tr>
             <th>Nome</th>
@@ -122,9 +146,10 @@
             <th>Data</th>
         </tr>
     <%
+        Collections.sort(BD.getUsuarios());
         for(int i = 0; i < BD.getUsuarios().size(); i++){%>
         <tr>
-            <td><%=BD.getUsuarios().get(i).getNome() %></td>
+        <td><%=BD.getUsuarios().get(i).getNome() %></td>
         <td><%= BD.getUsuarios().get(i).getResultadoTeste() %></td>
         <td><%=BD.getUsuarios().get(i).getDataTeste().getDayOfMonth() + "/" +
                 BD.getUsuarios().get(i).getDataTeste().getMonth()+ "/" +
@@ -134,5 +159,7 @@
         </tr>
         <%}%>
     </table>
+    <if
+
     </body>
 </html>
