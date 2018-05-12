@@ -21,7 +21,6 @@ public class Quiz {
             test.add(new Question("08 - Quem nasce na cidade de Salvador, no estado da Bahia, é chamado de:","Soteropolitano", new String[]{"Salvadorenho", "Soteropolitano","Salvadorano"}));
             test.add(new Question("09 - O monumento denominado Arco do Triunfo situa-se me qual cidade?","Paris", new String[]{"Roma", "Londres","Paris"}));
             test.add(new Question("10 - O dia da Bandeira é comemorado em:","19 de Novembro", new String[]{"19 de Novembro", "07 de Setembro","15 de Novembro"}));
-            
         }
         return test;
         

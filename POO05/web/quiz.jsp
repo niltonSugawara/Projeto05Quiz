@@ -14,23 +14,26 @@
         <title>Quiz do Grupo 01</title>
     </head>
     <body>
+         <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {
+            response.sendRedirect("home.jsp?user=deslogado");
+        }%>
         <h1>Quiz do Grupo 01</h1>
          <form action="home.jsp">
             <%for (int i=0; i<Quiz.getTest().size(); i++){%>
             <%Question q = Quiz.getTest().get(i);%>
             <h2><%= q.getQuestion()%> </h2>
             <input type="radio" name="<%=q.getQuestion()%>"
-                   value="<%=q.getAlternatives()[0]%>"/>
+                   value="<%=q.getAlternatives()[0]%>">
                    <%=q.getAlternatives()[0]%>
             <input type="radio" name="<%=q.getQuestion()%>"
-                   value="<%=q.getAlternatives()[1]%>"/>
+                   value="<%=q.getAlternatives()[1]%>">
                    <%=q.getAlternatives()[1]%>
             <input type="radio" name="<%=q.getQuestion()%>"
-                   value="<%=q.getAlternatives()[2]%>"/>
+                   value="<%=q.getAlternatives()[2]%>">
                    <%=q.getAlternatives()[2]%>
              <%}%>
              <hr/>
-             <input type="submit" name="tested" value=Enviar"/>
+             <input type="submit" name="tested" value=Enviar">
         </form>
         
     </body>
