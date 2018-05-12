@@ -11,16 +11,16 @@ public class Quiz {
     public static ArrayList<Question> getTest(){
         if(test == null){
             test = new ArrayList<>();
-            test.add(new Question("Em 2009, quem era o presidente do Brasil","Lula", new String[]{"Molusco", "Lula","Polvo"}));
-            test.add(new Question("Complete a frase: O rato roeu a roupa do Rei...","de Roma9", new String[]{"de Roma", "da Espanha","da Inglaterra"}));
-            test.add(new Question("Quem nasce na cidade de São Paulo e´?","paulistano", new String[]{"paulista", "são-paulino","paulistano"}));
-            test.add(new Question("Quem é mundialmente conhecido como Rei do Futebol?","Pelé", new String[]{"Pelé", "Maradona","Roberto Carlos"}));
-            test.add(new Question("Qual o nome do brasileiro conhecido como Pai da Aviação","3", new String[]{"Alberto Santos Dumont", "Osvaldo Cruz","Rui Barbosa"}));
-            test.add(new Question("Qual continente se localiza o Egíto?","África", new String[]{"Ásia", "Europa","África"}));
-            test.add(new Question("A capital da China é conhecida por dois nomes. Você sabe quais?","Pequim e Beijing", new String[]{"Taiwan e Macau", "Pequim e Taiwan","Pequim e Beijing"}));
-            test.add(new Question("Quem nasce na cidade de Salvador, no estado da Bahia, é chamado de:","Soteropolitano", new String[]{"Salvadorenho", "Soteropolitano","Salvadorano"}));
-            test.add(new Question("O monumento denominado Arco do TriunfoA situa-se me qual cidade?","Paris", new String[]{"Roma", "Londres","Paris"}));
-            test.add(new Question("O dia da Bandeira é comemorado em:","19 de Novembro", new String[]{"19 de Novembro", "07 de Setembro","15 de Novembro"}));
+            test.add(new Question("01 - Em 2009, quem era o presidente do Brasil","Lula", new String[]{"Molusco", "Lula","Polvo"}));
+            test.add(new Question("02 - Complete a frase: O rato roeu a roupa do Rei...","de Roma", new String[]{"de Roma", "da Espanha","da Inglaterra"}));
+            test.add(new Question("03 - Quem nasce na cidade de São Paulo e´?","paulistano", new String[]{"paulista", "são-paulino","paulistano"}));
+            test.add(new Question("04 - Quem é mundialmente conhecido como Rei do Futebol?","Pelé", new String[]{"Pelé", "Maradona","Roberto Carlos"}));
+            test.add(new Question("05 - Qual o nome do brasileiro conhecido como Pai da Aviação","Alberto Santos Dumont", new String[]{"Alberto Santos Dumont", "Osvaldo Cruz","Rui Barbosa"}));
+            test.add(new Question("06 - Qual continente se localiza o Egíto?","África", new String[]{"Ásia", "Europa","África"}));
+            test.add(new Question("07 - A capital da China é conhecida por dois nomes. Você sabe quais?","Pequim e Beijing", new String[]{"Taiwan e Macau", "Pequim e Taiwan","Pequim e Beijing"}));
+            test.add(new Question("08 - Quem nasce na cidade de Salvador, no estado da Bahia, é chamado de:","Soteropolitano", new String[]{"Salvadorenho", "Soteropolitano","Salvadorano"}));
+            test.add(new Question("09 - O monumento denominado Arco do Triunfo situa-se me qual cidade?","Paris", new String[]{"Roma", "Londres","Paris"}));
+            test.add(new Question("10 - O dia da Bandeira é comemorado em:","19 de Novembro", new String[]{"19 de Novembro", "07 de Setembro","15 de Novembro"}));
             
         }
         return test;
