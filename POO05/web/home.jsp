@@ -11,6 +11,7 @@
 <%
     boolean tested = false;
     double media = 0;
+    int aux=0;
     if(request.getParameter("tested")!=null)
     {
         tested = true;
@@ -32,6 +33,7 @@
         u.setResultadoTeste(media);
         
         BD.getUsuarios().add(u);
+        BD.getTop10().add(u);
         response.sendRedirect(request.getRequestURI());
         }
     
@@ -47,22 +49,6 @@
         <h1>Quiz de Conhecimentos Gerais</h1>
         <h2>Teste seus conhecimentos e cultura</h2>
         
-         <% if (tested== true && media>=80 ){%>
-         <hr>
-         <h2>Parabéns,ótimo resultado,você acertou <%=media%>% das questões</h2>
-         <hr>
-         <%}%>
-         <%if (tested== true && media>=50 && media<80){%>
-         <hr>
-         <h2> Seu resultado foi bom,você acertou <%=media%>% das questões</h2>
-         <hr>
-         <%}%>
-         <%if (tested== true && media>=0 && media<50){%>
-         <hr>
-         <h2>Infelizmente seu resultado foi fraco,você acertou <%=media%>% das questões</h2>
-         <h2>Tente novamente para obter um resultado melhor</h2>
-         <hr>
-         <%}%>  
         
         <%String name="";
         if (request.getParameter("user") == "deslogado"){%><script language="JavaScript">alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
@@ -95,6 +81,28 @@
         <input type="hidden" name="buttonName">
         <input type="button" value="Deslogar" onclick="button1()" class="btn">
         </form>
+        
+         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() && BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 80 ){%>
+         <hr>
+         <h2>Parabéns <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,ótimo resultado,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <hr>
+         <%}%>
+         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
+                 BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 50 && 
+                 BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 80){%>
+
+         <hr>
+         <h2> Seu resultado foi bom <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <hr>
+         <%}%>
+        <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
+                 BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 0 && 
+                 BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 50){%>
+         <hr>
+         <h2>Infelizmente seu resultado foi fraco <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <h2>Tente novamente para obter um resultado melhor</h2>
+         <hr>
+         <%}%>  
         
        <h3><a href="quiz.jsp">Realizar QUIZ</a></h3>
            
@@ -146,8 +154,30 @@
             <th>Data</th>
         </tr>
     <%
-        Collections.sort(BD.getUsuarios());
-        for(int i = 0; i < BD.getUsuarios().size(); i++){%>
+        
+        Collections.sort(BD.getTop10());
+        for(int i = 0; i < BD.getTop10().size(); i++){%>
+        <tr>
+        <td><%=BD.getTop10().get(i).getNome() %></td>
+        <td><%= BD.getTop10().get(i).getResultadoTeste() %></td>
+        <td><%=BD.getTop10().get(i).getDataTeste().getDayOfMonth() + "/" +
+                BD.getTop10().get(i).getDataTeste().getMonth()+ "/" +
+                BD.getTop10().get(i).getDataTeste().getYear() + " " +
+                BD.getTop10().get(i).getDataTeste().getHour() + ":" +
+                BD.getTop10().get(i).getDataTeste().getMinute() %> </td>
+        </tr>
+        <%}%>
+    </table>
+    
+    <h1>Ultimos 10 </h1>
+    <table name="top10">
+        <tr>
+            <th>Nome</th>
+            <th>Resultado</th>
+            <th>Data</th>
+        </tr>
+    <%
+        for(int i = BD.getUsuarios().size()-1; i >= 0;i--){%>
         <tr>
         <td><%=BD.getUsuarios().get(i).getNome() %></td>
         <td><%= BD.getUsuarios().get(i).getResultadoTeste() %></td>
@@ -155,11 +185,9 @@
                 BD.getUsuarios().get(i).getDataTeste().getMonth()+ "/" +
                 BD.getUsuarios().get(i).getDataTeste().getYear() + " " +
                 BD.getUsuarios().get(i).getDataTeste().getHour() + ":" +
-                BD.getUsuarios().get(i).getDataTeste().getMinute() %>  </td>
+                BD.getUsuarios().get(i).getDataTeste().getMinute() %> </td>
         </tr>
         <%}%>
     </table>
-    <if
-
     </body>
 </html>
