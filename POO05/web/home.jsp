@@ -52,12 +52,11 @@
        
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
         
-        <h1>Quiz de Conhecimentos Gerais</h1>
+        <center><h1>Quiz de Conhecimentos Gerais</h1></center>
         <h2>Teste seus conhecimentos e cultura</h2>
         
         
-        <%String name="";
-        if (request.getParameter("user") == "deslogado"){%><script language="JavaScript">alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
+        <%String name="";%>
         <!--tela de login--> 
        
         <!--Se o valor do btnUsuario for nulo, 
@@ -71,7 +70,7 @@
            {             
            }
        } catch(Exception ex) {
-           %><script language="JavaScript">alert("Digite um valor válido!");</script><%
+           
        }      
        %>
        <!--Se o nome da sessão for nulo ou vazio (usuário deslogado) a aplicação 
