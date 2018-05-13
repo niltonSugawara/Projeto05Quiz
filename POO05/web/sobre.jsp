@@ -10,11 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz do Grupo 01</title>
+        <style>
+            main{width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;}
+        </style>
     </head>
     <body>
+        <main>
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
         <h1>Desenvolvedores do Quiz</h1>
-           <main role="main" class="container">
+     
             <h1>Grupo 01</h1>
             <h2> Integrantes</h2>
             <p> O GRupo 01 é formado pelos seguintes integrantes:</p>
@@ -25,7 +29,7 @@
                     <tr><th>Contato</th></tr>
                 </thead> --%>
                 <tbody>
-                    <tr><th>View</th><th><img src="img/Newton Swegara.jpg" alt=""width="200"height="200"/></th><th><img src="img/Fabio Pecora.jpg" alt=""width="200"height="200"/></th><th><img src="img/Thiago.jpg" alt=""width="200"height="200"/></th><th><img src="img/Nilson Lima.jpg" alt=""width="200"height="200"/></th></tr>                
+                    <tr><th></th><th><img src="img/Newton Swegara.jpg" alt=""width="200"height="200"/></th><th><img src="img/Fabio Pecora.jpg" alt=""width="200"height="200"/></th><th><img src="img/Thiago.jpg" alt=""width="200"height="200"/></th><th><img src="img/Nilson Lima.jpg" alt=""width="200"height="200"/></th></tr>                
                     <tr><th>Nome:</th><th>Nilton Sugawara</th><th>Fábio Pecora</th><th>Tiago Thomas Assis</th><th>Nilson José de Lima</th></tr>
                     <tr><th>e-mail:</th><th><a href="mailto:nilton.sugawara@gmail.com" title="">nilton.sugawara@gmail.com</a></th>
                         <th><a href="mailto:brener_bg@hotmail.com" title="">pecorafatec@gmail.com</a></th>
@@ -40,4 +44,5 @@
                 
         </main>
     </body>
+      <%@include file="WEB-INF/jspf/rodapé.jspf" %>
 </html>

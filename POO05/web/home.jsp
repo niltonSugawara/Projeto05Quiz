@@ -41,12 +41,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz de Conhecimentos Gerais</title>
+        <style>
+            main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;}
+        </style>
     </head>
     <body>
+        <main>
+       
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
+        
         <h1>Quiz de Conhecimentos Gerais</h1>
         <h2>Teste seus conhecimentos e cultura</h2>
-        
+        <hr/>
          <% if (tested== true && media>=80 ){%>
          <hr>
          <h2>Parabéns,ótimo resultado,você acertou <%=media%>% das questões</h2>
@@ -159,7 +165,7 @@
         </tr>
         <%}%>
     </table>
-    <if
-
+    </main>
     </body>
+      <%@include file="WEB-INF/jspf/rodapé.jspf" %>
 </html>
