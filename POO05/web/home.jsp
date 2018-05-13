@@ -82,6 +82,8 @@
             <button type="submit" name="btnUsuario" class="btn">Logar</button>
             </form>
         <%} else {
+        //Se o usuário já estiver logado, o sistema só busca o nome da sessão 
+        //para atribuir à variável "name" e exibir a mensagem de boas vindas
         name=(String)session.getAttribute("nomeSessao"); %>
                
         <p>Olá, <%=name%></p>

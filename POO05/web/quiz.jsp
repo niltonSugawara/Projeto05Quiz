@@ -17,9 +17,6 @@
     <style>
     h2, p, li, body {font-family: helvetica}
     </style>
-         <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {
-            response.sendRedirect("home.jsp?user=deslogado");
-        }%>
         <h1>Quiz do Grupo 01</h1>
          <form action="home.jsp">
             <%for (int i=0; i<Quiz.getTest().size(); i++){%>
