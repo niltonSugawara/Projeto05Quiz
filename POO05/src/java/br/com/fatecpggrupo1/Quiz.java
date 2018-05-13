@@ -16,7 +16,7 @@ public class Quiz {
             test.add(new Question("03 - Quem nasce na cidade de São Paulo e´?","paulistano", new String[]{"paulista", "são-paulino","paulistano"}));
             test.add(new Question("04 - Quem é mundialmente conhecido como Rei do Futebol?","Pelé", new String[]{"Pelé", "Maradona","Roberto Carlos"}));
             test.add(new Question("05 - Qual o nome do brasileiro conhecido como Pai da Aviação","Alberto Santos Dumont", new String[]{"Alberto Santos Dumont", "Osvaldo Cruz","Rui Barbosa"}));
-            test.add(new Question("06 - Qual continente se localiza o Egíto?","África", new String[]{"Ásia", "Europa","África"}));
+            test.add(new Question("06 - Qual continente se localiza o Egíto?","Africano", new String[]{"Asiático", "Europeu","Africano"}));
             test.add(new Question("07 - A capital da China é conhecida por dois nomes. Você sabe quais?","Pequim e Beijing", new String[]{"Taiwan e Macau", "Pequim e Taiwan","Pequim e Beijing"}));
             test.add(new Question("08 - Quem nasce na cidade de Salvador, no estado da Bahia, é chamado de:","Soteropolitano", new String[]{"Salvadorenho", "Soteropolitano","Salvadorano"}));
             test.add(new Question("09 - O monumento denominado Arco do Triunfo situa-se me qual cidade?","Paris", new String[]{"Roma", "Londres","Paris"}));
