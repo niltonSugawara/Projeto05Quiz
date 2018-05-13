@@ -34,7 +34,7 @@
         BD.getUsuarios().add(u);
         response.sendRedirect(request.getRequestURI());
         }
-    }
+    
     %>
     
 <html>
