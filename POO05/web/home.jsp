@@ -59,8 +59,8 @@
         <%String name="";%>
         <!--tela de login--> 
        
-        <!--Se o valor do btnUsuario for nulo, 
-        ele obtém o nome que vai ser inserido no login pelo usuário-->
+        <!--Se o valor do btnUsuario for diferente de null, 
+        ele obtém aquele nome inserido no login pelo usuário-->
        <%try {
            if(request.getParameter("btnUsuario") != null){
                String nomeUsuario = request.getParameter("inputUsuario");
@@ -89,7 +89,7 @@
         <p>Olá, <%=name%></p>
         <form name="form1" method="post">
         <input type="hidden" name="buttonName">
-        <input type="button" value="Deslogar" onclick="button1()" class="btn">
+        <input type="button" value="Sair" onclick="button1()" class="btn">
         </form>
          <% try {
             if(BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() != null) { %>          
@@ -143,23 +143,26 @@
            </table>
         <%}%>
             
-            <% 
+            
+
+    <!-- Função JavaScript que é chamada pelo botão "Sair"-->
+    <script language="JavaScript">
+
+        function button1()
+        {
+            document.form1.buttonName.value = "deslogou";
+            form1.submit();
+        } 
+        
+    </script>
+    <!-- Com a chamada da função do button1, a comparação do if abaixo
+    é validada, e a sessão é invalidada, redirecioando à home novamente-->
+    <% 
         if(request.getParameter("buttonName") != null) {
                session.invalidate();
                response.sendRedirect("home.jsp");
         }
     %>
-
-
-    <script language="JavaScript">
-        
-        function button1()
-        {
-            document.form1.buttonName.value = "yes";
-            form1.submit();
-        } 
-        
-    </script>
     <h1>TOP 10</h1>
 
     <table name="top10">
