@@ -136,6 +136,7 @@
                 BD.getUsuarios().get(i).getDataTeste().getMinute() %>  </td>
         </tr>
         <%}}%>
+        
            </table>
         <%}%>
             
@@ -160,6 +161,7 @@
 
     <table name="top10">
         <tr>
+             <th>Posição</th>
             <th>Nome</th>
             <th>Resultado</th>
             <th>Data</th>
@@ -169,6 +171,7 @@
         Collections.sort(BD.getTop10());
         for(int i = 0; i < BD.getTop10().size(); i++){%>
         <tr>
+            <td><%=i%></td>
         <td><%=BD.getTop10().get(i).getNome() %></td>
         <td><%= BD.getTop10().get(i).getResultadoTeste() %></td>
         <td><%=BD.getTop10().get(i).getDataTeste().getDayOfMonth() + "/" +
@@ -177,7 +180,10 @@
                 BD.getTop10().get(i).getDataTeste().getHour() + ":" +
                 BD.getTop10().get(i).getDataTeste().getMinute() %> </td>
         </tr>
-        <%}%>
+        <%
+         if (i>=10){i = BD.getTop10().size();}
+       }
+        %>
     </table>
     
     <h1>Ultimos 10 </h1>
@@ -186,19 +192,28 @@
             <th>Nome</th>
             <th>Resultado</th>
             <th>Data</th>
+            <th>Hora</th>
         </tr>
     <%
+        aux = 0;
         for(int i = BD.getUsuarios().size()-1; i >= 0;i--){%>
         <tr>
         <td><%=BD.getUsuarios().get(i).getNome() %></td>
         <td><%= BD.getUsuarios().get(i).getResultadoTeste() %></td>
         <td><%=BD.getUsuarios().get(i).getDataTeste().getDayOfMonth() + "/" +
                 BD.getUsuarios().get(i).getDataTeste().getMonth()+ "/" +
-                BD.getUsuarios().get(i).getDataTeste().getYear() + " " +
+                BD.getUsuarios().get(i).getDataTeste().getYear() + " "%>
+        </td><td>
+                <%=
                 BD.getUsuarios().get(i).getDataTeste().getHour() + ":" +
-                BD.getUsuarios().get(i).getDataTeste().getMinute() %> </td>
+                BD.getUsuarios().get(i).getDataTeste().getMinute() + ":"  +
+                BD.getUsuarios().get(i).getDataTeste().getSecond()%> 
+        </td>
         </tr>
-        <%}%>
+        <% aux++;
+          if (aux>=10){i=0;}
+           }
+        %>
     </table>
     </body>
       <%@include file="WEB-INF/jspf/rodapé.jspf" %>
