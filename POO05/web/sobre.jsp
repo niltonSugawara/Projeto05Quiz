@@ -34,7 +34,7 @@
                     <tr><th>WhatsApp</th><th>+55 13 99710-2353</th><th>+55 13 98172-5946</th><th>+55 13 98203-6593</th><th>+55 13 98129-4280</th></tr>
                 </tbody>
             </table>
-            <p> Todos alunos do 4º Ciclo do curso de ADS - Análise e Desenvolvimento de Sistemas, da FATEC-PG</p>
+            <p> Todos integrantes são alunos do 4º Ciclo do curso de ADS - Análise e Desenvolvimento de Sistemas, da FATEC-PG</p>
             <h2> Sobre a Aplicação</h2>
             <p> Esta aplicação tem como objetivo apresentar um jogo do tipo Quiz, apresentando pontuação e classificação dos usuários, <br>
                 
