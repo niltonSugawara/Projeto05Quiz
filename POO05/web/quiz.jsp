@@ -14,6 +14,9 @@
         <title>Quiz do Grupo 01</title>
     </head>
     <body>
+    <style>
+    h2, p, li, body {font-family: helvetica}
+    </style>
          <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {
             response.sendRedirect("home.jsp?user=deslogado");
         }%>

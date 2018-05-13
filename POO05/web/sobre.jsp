@@ -17,12 +17,11 @@
     <body>
         <main>
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
-        <h1>Desenvolvedores do Quiz</h1>
+        <center><h1>Desenvolvedores do Quiz</h1></center>
         
-            <h1> &nbspGrupo 01</h1>
-            <h2> &nbsp Integrantes</h2>
-            <p> &nbsp O Grupo 01 é formado pelos seguintes integrantes:</p>
-        
+        <center>
+            <h2> &nbsp O Grupo 01 é formado pelos seguintes integrantes:</h2>
+        </center>
             <table class="table table-sm">
                 <%--<thead class="thead-dark">
                     <tr><th>View</th></tr>
@@ -36,7 +35,7 @@
                         <th><a href="mailto:brener_bg@hotmail.com" title="">pecorafatec@gmail.com</a></th>
                         <th><a href="mailto:tiagotassis505@gmail.com" title="">tiagotassis505@gmail.com</a></th>
                         <th><a href="mailto:nilsonli@gmail.com" title="">nilsonli@gmail.com</a></th></tr>
-                    <tr><th>WhatsApp</th><th>+55 13 99710-2353</th><th>+55 13 98172-5946</th><th>+55 13 98203-6593</th><th>+55 13 98129-4280</th></tr>
+                    <tr><th>WhatsApp</th><th>(13) 99710-2353</th><th>(13) 98172-5946</th><th>(13) 98203-6593</th><th>(13) 98129-4280</th></tr>
                 </tbody>
             </table>
             <center><p> Todos alunos do 4º Ciclo do curso de ADS - Análise e Desenvolvimento de Sistemas, da FATEC-PG</p>

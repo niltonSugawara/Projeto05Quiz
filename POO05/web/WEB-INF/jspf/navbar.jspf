@@ -2,20 +2,20 @@
 
 <style>
     
-    ul {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: darkorchid;}
+    ul {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: cadetblue;}
     li {float: left;}
     li a {display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;}
     li a:hover {background-color: #111;}
-    header{width: 400px; height: 160px;position: relative;float: left}
-    h1 {font-family: arial}
+    header {width: 400px; height: 160px;position: relative;float: left}
+    h2, p, li, body {font-family: helvetica}
 </style>
     
      <header>
-         <hr/>
+         <br>
          <img  src="img/logotipo-fatec-pg.png" width="350px" height="100px">
-         <hr/>
+         
      </header>
-     <h2>PROGRAMAÇÃO ORIENTADA A OBJETOS!</h2>
+<center><h2>PROGRAMAÇÃO ORIENTADA A OBJETOS!</h2></center>
 <nav>
     <ul>
         <li><a href="home.jsp">HOME</a></li>
