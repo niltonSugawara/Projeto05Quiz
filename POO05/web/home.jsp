@@ -60,6 +60,8 @@
         if (request.getParameter("user") == "deslogado"){%><script language="JavaScript">alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
         <!--tela de login--> 
        
+        <!--Se o valor do btnUsuario for nulo, 
+        ele obtém o nome que vai ser inserido no login pelo usuário-->
        <%try {
            if(request.getParameter("btnUsuario") != null){
                String nomeUsuario = request.getParameter("inputUsuario");
@@ -72,7 +74,8 @@
            %><script language="JavaScript">alert("Digite um valor válido!");</script><%
        }      
        %>
-       
+       <!--Se o nome da sessão for nulo ou vazio (usuário deslogado) a aplicação 
+       exibe o campo de login para o usuário entrar-->
        <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {%>
         <form>
             Login:
