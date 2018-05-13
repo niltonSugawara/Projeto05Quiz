@@ -14,9 +14,9 @@
         <title>Quiz do Grupo 01</title>
     </head>
     <body>
-         <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {
-            response.sendRedirect("home.jsp?user=deslogado");
-        }%>
+    <style>
+    h2, p, li, body {font-family: helvetica}
+    </style>
         <h1>Quiz do Grupo 01</h1>
          <form action="home.jsp">
             <%for (int i=0; i<Quiz.getTest().size(); i++){%>

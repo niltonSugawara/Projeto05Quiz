@@ -52,14 +52,15 @@
        
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
         
-        <h1>Quiz de Conhecimentos Gerais</h1>
+        <center><h1>Quiz de Conhecimentos Gerais</h1></center>
         <h2>Teste seus conhecimentos e cultura</h2>
         
         
-        <%String name="";
-        if (request.getParameter("user") == "deslogado"){%><script language="JavaScript">alert("Para acessar o questionário é necessário estar logado!");</script><%}%>
+        <%String name="";%>
         <!--tela de login--> 
        
+        <!--Se o valor do btnUsuario for nulo, 
+        ele obtém o nome que vai ser inserido no login pelo usuário-->
        <%try {
            if(request.getParameter("btnUsuario") != null){
                String nomeUsuario = request.getParameter("inputUsuario");
@@ -69,10 +70,11 @@
            {             
            }
        } catch(Exception ex) {
-           %><script language="JavaScript">alert("Digite um valor válido!");</script><%
+           
        }      
        %>
-       
+       <!--Se o nome da sessão for nulo ou vazio (usuário deslogado) a aplicação 
+       exibe o campo de login para o usuário entrar-->
        <%if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {%>
         <form>
             Login:
@@ -80,6 +82,8 @@
             <button type="submit" name="btnUsuario" class="btn">Logar</button>
             </form>
         <%} else {
+        //Se o usuário já estiver logado, o sistema só busca o nome da sessão 
+        //para atribuir à variável "name" e exibir a mensagem de boas vindas
         name=(String)session.getAttribute("nomeSessao"); %>
                
         <p>Olá, <%=name%></p>
