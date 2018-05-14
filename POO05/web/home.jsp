@@ -110,7 +110,7 @@
         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 0 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 50){%>
-         <h2 class="ruim">Sem condições <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões, recomendo COMEX ou GE</h2>
+                 <h2 class="ruim">Sem condições <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões, recomendo <a href="http://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=162" target="_BLANK">COMEX</a> ou <a href="http://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=245" target="_BLANK">GE</a></h2>
          <h2 class="ruim">Quando se formar, você tenta novamente e <b>talvez</b> consiga passar no teste</h2>
          <%}%>  
         <%
