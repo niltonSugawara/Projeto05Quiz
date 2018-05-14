@@ -110,7 +110,7 @@
         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 0 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 50){%>
-         <h2 class="ruim">Sem condições <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões, vai pra COMEX</h2>
+         <h2 class="ruim">Sem condições <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões, recomendo COMEX ou GE</h2>
          <h2 class="ruim">Quando se formar, você tenta novamente e <b>talvez</b> consiga passar no teste</h2>
          <%}%>  
         <%
