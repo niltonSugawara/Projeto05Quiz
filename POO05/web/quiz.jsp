@@ -14,6 +14,9 @@
         <title>Quiz do Grupo 01</title>
     </head>
     <body>
+    <!-- Controlando o acesso ao questionário sem estar logado -->
+    <% if(session.getAttribute("nomeSessao") == null || session.getAttribute("nomeSessao").equals("")) {
+            response.sendRedirect("home.jsp?user=deslogado"); }%>
     <style>
     h2, p, li, body {font-family: helvetica}
     h2, input {margin-left:15px}

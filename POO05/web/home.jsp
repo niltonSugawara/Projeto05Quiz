@@ -52,6 +52,7 @@
         </style>
     </head>
     <body>
+        
         <main>
        
         <%@include file="WEB-INF/jspf/navbar.jspf" %>
@@ -88,8 +89,7 @@
         <%} else {
         //Se o usuário já estiver logado, o sistema só busca o nome da sessão 
         //para atribuir à variável "name" e exibir a mensagem de boas vindas
-        name=(String)session.getAttribute("nomeSessao"); %>
-               
+        name=(String)session.getAttribute("nomeSessao"); %>  
         <p>Olá, <%=name%></p>
         <form name="form1" method="post">
         <input type="hidden" name="buttonName">
