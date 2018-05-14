@@ -2,18 +2,17 @@
 
 <style>
     
-    ul {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: cadetblue;}
+    ul {list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color: cadetblue; margin-bottom: 50px;}
     li {float: left;}
     li a {display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;}
     li a:hover {background-color: #111;}
-    header {width: 400px; height: 160px;position: relative;float: left}
+    header {width: 400px; height: 100px;position: relative;float: left}
     h2, p, li, body {font-family: helvetica}
 </style>
     
      <header>
          <br>
          <img  src="img/logotipo-fatec-pg.png" width="350px" height="100px">
-         
      </header>
 <center><h2>PROGRAMAÇÃO ORIENTADA A OBJETOS!</h2></center>
 <nav>

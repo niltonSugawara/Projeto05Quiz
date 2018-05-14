@@ -26,12 +26,10 @@
         media = 100.0 * ((double) (count)/Quiz.getTest().size());
         
         String nome = (session.getAttribute("nomeSessao").toString());
-        
         Usuario u = new Usuario();
         u.setNome(nome);
         u.setDataTeste(LocalDateTime.now());
         u.setResultadoTeste(media);
-        
         BD.getUsuarios().add(u);
         BD.getTop10().add(u);
         response.sendRedirect(request.getRequestURI());
@@ -48,6 +46,9 @@
             main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;background-color: white}
             h1,h2,h3,p,form,table {margin-left: 30px}
             #top10 {float: right}
+            .ruim {color: red; text-align: center;}
+            .bom {color: blue; text-align: center;}
+            .otimo {color: green; text-align: center;}
             
         </style>
     </head>
@@ -98,25 +99,19 @@
          <% try {
             if(BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() != null) { %>          
          <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() && BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 80 ){%>
-         <hr>
-         <h2>Parabéns <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,ótimo resultado,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
-         <hr>
+         <h2 class="otimo">Parabéns <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, ótimo resultado,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
          <%}%>
          <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 50 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 80){%>
 
-         <hr>
-         <h2> Seu resultado foi bom <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
-         <hr>
+         <h2 class="bom"> Seu resultado foi bom <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
          <%}%>
         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 0 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 50){%>
-         <hr>
-         <h2>Infelizmente seu resultado foi fraco <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
-         <h2>Tente novamente para obter um resultado melhor</h2>
-         <hr>
+         <h2 class="ruim">Infelizmente seu resultado foi fraco <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <h2 class="ruim">Tente novamente para obter um resultado melhor</h2>
          <%}%>  
         <%
           }
