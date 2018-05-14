@@ -16,8 +16,14 @@
     <body>
     <style>
     h2, p, li, body {font-family: helvetica}
+    h2, input {margin-left:15px}
+    main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;background-color: white}
+    body {background-color: activecaption}
     </style>
+    <main>
+        <center>
         <h1>Quiz do Grupo 01</h1>
+        </center>
          <form action="home.jsp">
             <%for (int i=0; i<Quiz.getTest().size(); i++){%>
             <%Question q = Quiz.getTest().get(i);%>
@@ -31,10 +37,12 @@
             <input type="radio" name="<%=q.getQuestion()%>"
                    value="<%=q.getAlternatives()[2]%>">
                    <%=q.getAlternatives()[2]%>
+                   <hr/>
              <%}%>
-             <hr/>
-             <input type="submit" name="tested" value=Enviar">
+             <center>
+             <input type="submit" name="tested" value=Enviar" >
+             </center>
         </form>
-        
+        </main>
     </body>
 </html>

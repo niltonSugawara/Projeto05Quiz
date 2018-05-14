@@ -44,7 +44,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz de Conhecimentos Gerais</title>
         <style>
-            main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;}
+            body {background-color: activecaption}
+            main {width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;background-color: white}
+            h1,h2,h3,p,form,table {margin-left: 30px}
+            #top10 {float: right}
+            
         </style>
     </head>
     <body>
@@ -164,6 +168,7 @@
                response.sendRedirect("home.jsp");
         }
     %>
+    <div id="top10">
     <h1>TOP 10</h1>
 
     <table name="top10">
@@ -192,7 +197,8 @@
        }
         %>
     </table>
-    
+    </div>
+    <div id="top10Ult">
     <h1>Ultimos 10 </h1>
     <table name="top10">
         <tr>
@@ -222,6 +228,8 @@
            }
         %>
     </table>
+    </div>
+        </main>
     </body>
       <%@include file="WEB-INF/jspf/rodapé.jspf" %>
 </html>

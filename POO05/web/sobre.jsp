@@ -11,7 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Quiz do Grupo 01</title>
         <style>
-            main{width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;}
+            main{width: 955px; margin: -1px auto 10px;border: 1px solid captiontext;background-color: white}
+            body {background-color: activecaption}
         </style>
     </head>
     <body>
