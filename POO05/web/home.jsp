@@ -127,7 +127,9 @@
             <th>Resultado</th>
             <th>Data</th>
         </tr>
-        <% for(int i = 0; i < BD.getUsuarios().size(); i++){
+        <% 
+        aux = 0;
+        for(int i = BD.getUsuarios().size()-1; i >= 0;i--){
         if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(i).getNome()){%>
         <tr>
         <td><%=BD.getUsuarios().get(i).getNome() %></td>
@@ -138,7 +140,10 @@
                 BD.getUsuarios().get(i).getDataTeste().getHour() + ":" +
                 BD.getUsuarios().get(i).getDataTeste().getMinute() %>  </td>
         </tr>
-        <%}}%>
+        <%
+        aux++;
+        if (aux>=10){i=0;}}
+        }%>
         
            </table>
         <%}%>
