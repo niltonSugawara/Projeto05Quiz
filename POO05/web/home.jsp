@@ -56,9 +56,9 @@
         <h2>Teste seus conhecimentos e cultura</h2>
         
         
+        
+        <!--Tela de login--> 
         <%String name="";%>
-        <!--tela de login--> 
-       
         <!--Se o valor do btnUsuario for diferente de null, 
         ele obtém aquele nome inserido no login pelo usuário-->
        <%try {
