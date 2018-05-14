@@ -1,0 +1,11 @@
+<%@ page pageEncoding="UTF-8" %>
+<style>
+    footer{
+
+    }
+</style>
+<footer>
+    <center>
+    <p ><small>Grupo 01 Todos os direitos Reservados | FATEC Praia Grande 2018</small></p>
+    </center>
+</footer>
