@@ -99,19 +99,19 @@
          <% try {
             if(BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() != null) { %>          
          <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() && BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 80 ){%>
-         <h2 class="otimo">Parabéns <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, ótimo resultado,você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <h2 class="otimo">Boa <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, tu é o bichão memo hein, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
          <%}%>
          <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 50 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 80){%>
 
-         <h2 class="bom"> Seu resultado foi bom <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
+         <h2 class="bom"> Não fez mais que sua obrigação <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
          <%}%>
         <% if (session.getAttribute("nomeSessao").toString() == BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome() &&
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() >= 0 && 
                  BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste() < 50){%>
-         <h2 class="ruim">Infelizmente seu resultado foi fraco <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, você acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões</h2>
-         <h2 class="ruim">Tente novamente para obter um resultado melhor</h2>
+         <h2 class="ruim">Sem condições <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getNome()%>, acertou <%=BD.getUsuarios().get(BD.getUsuarios().size()-1).getResultadoTeste()%>% das questões, vai pra COMEX</h2>
+         <h2 class="ruim">Quando se formar, você tenta novamente e <b>talvez</b> consiga passar no teste</h2>
          <%}%>  
         <%
           }
